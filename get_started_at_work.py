@@ -33,8 +33,13 @@ def run(sites, apps):
 	launch_sites(sites)
 	launch_apps(apps)
 
-apps = ['Slack', 'Spectacle', 'Amphetamine', 'IntelliJ\ Idea\ 2']
-sites = {"Toggl" : "https://toggl.com/app/timer", "Inbox" : "https://inbox.google.com/u/0/", "Calendar" : "https://calendar.google.com/calendar/r?pli=1", "GitHub" : "https://github.com"}
+
+apps = ['Slack', 'Spectacle', 'Postman', 'Amphetamine', 'Docker', 'IntelliJ']
+sites = {"Toggl" : "https://toggl.com/app/timer",
+"Inbox" : "https://inbox.google.com/u/0/",
+"Github": "https://github.com",
+"Calendar" : "https://calendar.google.com/calendar/r?pli=1",
+"Trello" : "https://www.trello.com"}
 
 run_updates()
 run(sites, apps)
