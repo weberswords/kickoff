@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 
+import argparse
 import psutil
 import subprocess
 import webbrowser
 from update import run_updates
+
+parser = argparse.ArgumentParser(description='Launch apps and websites or update')
+parser.add_argument('--apps', help='only open the apps', action='store_true')
+parser.add_argument('--sites', help='only open the sites', action='store_true')
+parser.add_argument('--update', help='do updates', action='store_true')
 
 def launch_sites(sites):
 	for key in sites:
@@ -30,18 +36,26 @@ def launch_apps(apps):
 			print("%s is already open!" % app)
 
 def run(sites, apps):
-	launch_sites(sites)
-	launch_apps(apps)
+	args = parser.parse_args()
+	if args.update:
+		run_updates()
+	if args.apps:
+	    launch_apps(apps)
+	if args.sites:
+	    launch_sites(sites)
+	if not args.apps and not args.sites:
+		launch_apps(apps)
+		launch_sites(sites)
 
 
-apps = ['Slack', 'Spectacle', 'Postman', 'Amphetamine', 'Docker', 'IntelliJ']
-sites = {"Toggl" : "https://toggl.com/app/timer",
-"Inbox" : "https://inbox.google.com/u/0/",
+apps = ['Slack', '1Password 7', 'Spectacle', 'Amphetamine', 'Docker', 'Todoist']
+sites = {
+"Mail" : "https://mail.google.com/",
 "Github": "https://github.com",
-"Calendar" : "https://calendar.google.com/calendar/r?pli=1",
-"Trello" : "https://www.trello.com"}
+"Calendar" : "https://calendar.google.com/",
+"Drive" : "https://drive.google.com/",
+}
 
-run_updates()
 run(sites, apps)
 
 
