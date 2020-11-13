@@ -7,9 +7,13 @@ To run:
 `./get_started.py [args]`
 
 default without any args will open all non-work/school apps and sites
+
 `--apps: only open non-work/school apps`
+
 `--sites: only open non-work/school sites`
+
 `--update: do updates`
+
 `--work: also open work/school-related things`
 
 ## Contributing
