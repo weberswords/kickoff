@@ -43,6 +43,7 @@ sites = {
 }
 
 work_sites = {
+	"Board" : "https://prometric.visualstudio.com/Prometric/_boards/board/t/GreyShore/Stories"
 }
 
 apps = [
@@ -52,7 +53,8 @@ apps = [
 ]
 
 work_apps = [
-	'/Applications/Slack.app'
+	'/Applications/Slack.app',
+	'/Applications/Microsoft Teams.app'
 ]
 
 run()
